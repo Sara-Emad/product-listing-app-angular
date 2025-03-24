@@ -1,0 +1,39 @@
+/* src/app/components/not-found/not-found.component.css */
+.not-found {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 6rem;
+  color: #e53935;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

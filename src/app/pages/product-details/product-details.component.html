@@ -1,0 +1,73 @@
+<!-- src/app/components/product-details/product-details.component.html -->
+<div class="container">
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading product details...</p>
+  </div>
+  
+  <div *ngIf="error" class="error">
+    <p>Error loading product details. Please try again later.</p>
+  </div>
+  
+  <div *ngIf="!loading && !error && product" class="product-details">
+    <div class="product-gallery">
+      <div class="main-image">
+        <button class="gallery-nav prev" (click)="prevImage()">&lt;</button>
+        <img [src]="product.images[currentImageIndex]" [alt]="product.title">
+        <button class="gallery-nav next" (click)="nextImage()">&gt;</button>
+      </div>
+      <div class="thumbnail-container">
+        <div 
+          *ngFor="let image of product.images; let i = index" 
+          class="thumbnail" 
+          [class.active]="i === currentImageIndex"
+          (click)="setImage(i)"
+        >
+          <img [src]="image" [alt]="product.title + ' thumbnail ' + i">
+        </div>
+      </div>
+    </div>
+    
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      
+      <div class="product-meta">
+        <span class="product-brand">Brand: <strong>{{ product.brand }}</strong></span>
+        <span class="product-category">Category: <strong>{{ product.category }}</strong></span>
+      </div>
+      
+      <div class="product-rating">
+        <div class="stars">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]">
+            <span class="star" [class.filled]="star <= product.rating">★</span>
+          </span>
+        </div>
+        <span class="rating-value">{{ product.rating }}</span>
+      </div>
+      
+      <div class="product-price">
+        <span *ngIf="product.discountPercentage">
+          <span class="original-price">{{ product.price }} EGP</span>
+          <span class="discount-price">{{ product.price | discount:product.discountPercentage | number: '1.2-2' }} EGP</span>
+          <span class="discount-percentage">({{ product.discountPercentage }}% off)</span>
+        </span>
+        <span *ngIf="!product.discountPercentage">{{ product.price }} EGP</span>
+      </div>
+      
+      <div class="product-stock" [class.in-stock]="product.stock > 0" [class.out-of-stock]="product.stock === 0">
+        {{ product.stock > 0 ? 'In Stock' : 'Out of Stock' }}
+        <span *ngIf="product.stock > 0">({{ product.stock }} available)</span>
+      </div>
+      
+      <div class="product-description">
+        <h3>Description</h3>
+        <p>{{ product.description }}</p>
+      </div>
+      
+      <div class="product-actions">
+        <button class="add-cart-btn" [disabled]="product.stock === 0">Add to Cart</button>
+        <button class="back-btn" routerLink="/products">Back to Products</button>
+      </div>
+    </div>
+  </div>
+</div>

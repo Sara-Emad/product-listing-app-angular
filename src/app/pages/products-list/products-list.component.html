@@ -1,0 +1,17 @@
+<!-- src/app/components/product-list/product-list.component.html -->
+<div class="container">
+  <h1 class="page-title">Products</h1>
+  
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading products...</p>
+  </div>
+  
+  <div *ngIf="error" class="error">
+    <p>Error loading products. Please try again later.</p>
+  </div>
+  
+  <div *ngIf="!loading && !error" class="product-grid">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<!-- src/app/components/navbar/navbar.component.html -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">Product Shop</div>
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Products</a>
+      </li>
+      <li>
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+      <li>
+        <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      </li>
+    </ul>
+  </div>
+</nav>
