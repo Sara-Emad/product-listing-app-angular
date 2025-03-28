@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 import { DiscountPipe } from '../../pipes/discount-calculator.pipe';
+import { CartService } from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-product-details',
@@ -23,7 +25,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -71,5 +74,11 @@ export class ProductDetailsComponent implements OnInit {
     if (this.product && index >= 0 && index < this.product.images.length) {
       this.currentImageIndex = index;
     }
+  }
+
+  addToCart(product: Product) {
+    // Create a new object with quantity to avoid modifying original product
+    const cartProduct = {...product, quantity: 1};
+    this.cartService.addToCart(cartProduct);
   }
 }

@@ -8,7 +8,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private productsUrl = 'assets/products.json';
+  private productsUrl = ' https://dummyjson.com/products';
 
   constructor(private http: HttpClient) { }
 

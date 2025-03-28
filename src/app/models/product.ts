@@ -11,4 +11,5 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: string[];
+  quantity: number; // Change to non-optional and initialize with 0
 }

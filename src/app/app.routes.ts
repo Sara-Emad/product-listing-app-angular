@@ -1,4 +1,3 @@
-// src/app/app-routes.ts
 import { Routes } from '@angular/router';
 import { ProductsListComponent } from '../app/pages/products-list/products-list.component';
 import { ProductDetailsComponent } from '../app/pages/product-details/product-details.component';

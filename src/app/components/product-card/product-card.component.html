@@ -28,7 +28,6 @@
   
     <div class="product-actions">
       <button class="view-details-btn" [routerLink]="['/product', product.id]">View Details</button>
-      <button class="add-cart-btn" [disabled]="product.stock === 0">Add to Cart</button>
-    </div>
+      <button (click)="addToCart(product)" class="add-to-cart-btn">Add to Cart</button>    </div>
   </div>
 </div>

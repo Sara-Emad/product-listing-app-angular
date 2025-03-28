@@ -65,7 +65,7 @@
       </div>
       
       <div class="product-actions">
-        <button class="add-cart-btn" [disabled]="product.stock === 0">Add to Cart</button>
+        <button (click)="addToCart(product)" class="add-to-cart-btn">Add to Cart</button>
         <button class="back-btn" routerLink="/products">Back to Products</button>
       </div>
     </div>
