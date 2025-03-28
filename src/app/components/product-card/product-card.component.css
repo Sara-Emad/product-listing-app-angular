@@ -103,7 +103,7 @@
   gap: 10px;
 }
 
-.view-details-btn, .add-cart-btn {
+.view-details-btn, .add-to-cart-btn {
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
@@ -122,16 +122,16 @@
   background-color: #e0e0e0;
 }
 
-.add-cart-btn {
+.add-to-cart-btn {
   background-color: #4caf50;
   color: white;
 }
 
-.add-cart-btn:hover {
+.add-to-cart-btn:hover {
   background-color: #43a047;
 }
 
-.add-cart-btn:disabled {
+.add-to-cart-btn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }

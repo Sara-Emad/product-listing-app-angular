@@ -203,7 +203,7 @@
   gap: 15px;
 }
 
-.add-cart-btn, .back-btn {
+.add-to-cart-btn, .back-btn {
   padding: 12px 24px;
   border: none;
   border-radius: 4px;
@@ -213,7 +213,7 @@
   transition: background-color 0.3s;
 }
 
-.add-cart-btn {
+.add-to-cart-btn {
   background-color: #4caf50;
   color: white;
   flex: 2;
